@@ -22,9 +22,16 @@ To join the Aria Minecraft Server, follow these steps:
    - Download the mods archive from [here](https://storage.googleapis.com/aria-minecraft-server/mods.zip). Empty the archive content in the mods directory of your minecraft forge installation.
    - Press Play. This will install the mods.
 
-4. **Connect to server**
-   - Navigate to the Multiplayer section and connect to the server using the IP address provided in the telegram group.
-   - Enjoy your time on the Aria Minecraft Server! 🎮
+4. **Download server client to turn the server on demand**
+   - Download the client from [here](https://storage.googleapis.com/aria-minecraft-server/aria-client.exe).
+   - Ignore the warning messages, download the application and run it.
+   - Insert the secret code which you can find pinned in the Telegram group.
+   - Press the button 'Avvia il server'.
+
+5. **Connect to server**
+   - After following the 4th step, go to the telegram group and wait for the IP address of the server.
+   - Open the minecraft launcher, press play using the Forge profile where your mods are installed.
+   - When game is loaded, go to multiplayer and connect directly using the IP address.
 
 If you encounter any issues during installation or while playing, feel free to reach out for assistance.
 
