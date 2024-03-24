@@ -1,13 +1,13 @@
 # Windows Setup Guide
 
-## Minecraft Version: 1.19.4
-## Forge Version: 45.0.24
+## Minecraft Version: 1.19.2
+## Forge Version: 43.2.0
 
 To join the Aria Minecraft Server, follow these steps:
 
 1. **Install Minecraft Launcher**
-    - Download the Minecraft Launcher from the [Microsoft Store](https://www.microsoft.com/store/productId/9NXP44L49SHJ)
-    - Close the Minecraft launcher when the installation is completed.
+    - Download the Official Minecraft Launcher from the [Microsoft Store](https://www.microsoft.com/store/productId/9NXP44L49SHJ)
+    - Open the Minecraft launcher and set it up. You may login with your Microsoft account if you wish.
 
 2. **Install Minecraft Forge**
    - Minecraft Forge is required to play with mods on our server. Follow these steps:
@@ -16,13 +16,14 @@ To join the Aria Minecraft Server, follow these steps:
      - Select install client and proceed with the installation.
 
 3. **Install mods**
-   - Launch the Minecraft Java Edition Launcher.
-   - Select the Minecraft Forge profile that now appears in the launcher.
-   - Open the profile's mods location.
-   - Download the mods archive from [here](https://storage.googleapis.com/aria-minecraft-server/mods.zip). Empty the archive content in the mods directory of your minecraft forge installation.
+   - Launch the Minecraft Java Edition using the Official Launcher.
+   - Select the Minecraft Forge profile, which can be found in the launcher if you followed step 2 correctly.
+   - Open the profile's mods location from the options of the Offical launcher.
+   - Download the mods archive from [here](https://storage.googleapis.com/aria-minecraft-server/mods.zip). 
+   - Empty the archive's content in the mods directory of your forge installation.
    - Press Play. This will install the mods.
 
-4. **Download server client to turn the server on demand**
+4. **Turn On the server**
    - Download the client from [here](https://storage.googleapis.com/aria-minecraft-server/aria-client.exe).
    - Ignore the warning messages, download the application and run it.
    - Insert the secret code which you can find pinned in the Telegram group.
