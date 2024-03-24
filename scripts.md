@@ -16,5 +16,9 @@ sudo mkfs.ext4 -m 0 -E lazy_itable_init=0,lazy_journal_init=0,discard /dev/sdb
 sudo mkdir -p /mnt/disks/aria-data-disk
 sudo mount -o discard,defaults /dev/sdb /mnt/disks/aria-data-disk
 
+
+# generate SA key script
+openssl base64 -in yourfile.json -out output.txt
+
 # docs
 https://cloud.google.com/compute/docs/disks/format-mount-disk-linux
