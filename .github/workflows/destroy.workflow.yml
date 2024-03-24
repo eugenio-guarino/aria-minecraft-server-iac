@@ -1,0 +1,53 @@
+name: destroy
+
+on:
+  repository_dispatch:
+    types: [destroy-infr]
+env:
+  tf_version: "1.4.0"
+  tf_working_dir: "./terraform"
+  TF_VAR_region: ${{ variables.REGION }}
+  TF_VAR_project: ${{ secrets.PROJECT_NAME }}
+  TF_VAR_zone: ${{ variables.ZONE }}
+  TF_VAR_instance_name: ${{ variables.INSTANCE_NAME }}
+  TF_VAR_service_account: ${{ secrets.GCP_SA_EMAIL}}
+  TF_VAR_network_tags: ${{ secrets.GCP_NETWORK_TAGS}}
+  GCP_SA_KEY: ${{ secrets.GCP_SA_KEY}}
+
+jobs:
+  terraform:
+    name: 'Terraform'
+    runs-on: ubuntu-latest
+    steps:
+
+      - name: checkout
+        uses: actions/checkout@master
+
+      - name: set GCP project
+        run: gcloud config set project ${{ secrets.PROJECT_NAME }}
+
+      - name: "Terraform Init"
+        uses: ops18/terraform-github-actions@master
+        with:
+          tf_actions_version: ${{ env.tf_version }}
+          tf_actions_comment: "false"
+          tf_actions_working_dir: ${{ env.tf_working_dir }}
+          tf_actions_subcommand: init
+          args: '-backend-config="bucket=${{ secrets.GCP_BUCKET }}" -backend-config="prefix=terraform-state"'
+
+      - name: "Terraform destroy"
+        uses: ops18/terraform-github-actions@master
+        with:
+          tf_actions_version: ${{ env.tf_version }}
+          tf_actions_comment: "false"
+          tf_actions_working_dir: ${{ env.tf_working_dir }}
+          tf_actions_subcommand: apply
+          args: '-destroy'
+
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ secrets.DESTROY_MESSAGE }}
