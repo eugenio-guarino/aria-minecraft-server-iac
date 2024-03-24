@@ -6,10 +6,10 @@ on:
 env:
   tf_version: "1.4.0"
   tf_working_dir: "./terraform"
-  TF_VAR_region: $REGION
+  TF_VAR_region: ${{ vars.REGION }}
   TF_VAR_project_id: ${{ secrets.PROJECT_NAME }}
-  TF_VAR_zone: $ZONE
-  TF_VAR_instance_name: $INSTANCE_NAME
+  TF_VAR_zone: ${{ vars.ZONE }}
+  TF_VAR_instance_name: ${{ vars.INSTANCE_NAME }}
   TF_VAR_service_account: ${{ secrets.GCP_SA_EMAIL}}
   GCP_SA_KEY: ${{ secrets.GCP_SA_KEY}}
 
@@ -24,7 +24,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            $CREATE_MESSAGE
+            ${{ vars.CREATE_MESSAGE }}
 
       - name: checkout
         uses: actions/checkout@master
@@ -40,15 +40,6 @@ jobs:
           tf_actions_working_dir: ${{ env.tf_working_dir }}
           tf_actions_subcommand: init
           args: '-backend-config="bucket=${{ secrets.GCP_BUCKET }}" -backend-config="prefix=terraform-state"'
-
-      - name: "Terraform Plan"
-        id: terraform-plan
-        uses: ops18/terraform-github-actions@master
-        with:
-          tf_actions_version: ${{ env.tf_version }}
-          tf_actions_comment: "false"
-          tf_actions_working_dir: ${{ env.tf_working_dir }}
-          tf_actions_subcommand: plan
 
       - name: "Terraform Apply"
         if: ${{steps.terraform-plan.outputs.tf_actions_plan_has_changes == 'true'}}
@@ -66,4 +57,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            $ALREADY_CREATED_MESSAGE
+            ${{ vars.ALREADY_CREATED_MESSAGE }}
