@@ -6,10 +6,10 @@ on:
 env:
   tf_version: "1.4.0"
   tf_working_dir: "./terraform"
-  TF_VAR_region: ${{ REGION }}
+  TF_VAR_region: $REGION
   TF_VAR_project_id: ${{ secrets.PROJECT_NAME }}
-  TF_VAR_zone: ${{ ZONE }}
-  TF_VAR_instance_name: ${{ INSTANCE_NAME }}
+  TF_VAR_zone: $ZONE
+  TF_VAR_instance_name: $INSTANCE_NAME
   TF_VAR_service_account: ${{ secrets.GCP_SA_EMAIL}}
   TF_VAR_network_tags: ${{ secrets.GCP_NETWORK_TAGS}}
   GCP_SA_KEY: ${{ secrets.GCP_SA_KEY}}
@@ -25,7 +25,7 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ CREATE_MESSAGE }}
+            $CREATE_MESSAGE
 
       - name: checkout
         uses: actions/checkout@master
@@ -58,4 +58,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{ ALREADY_CREATED_MESSAGE }}
+            $ALREADY_CREATED_MESSAGE
