@@ -2,7 +2,7 @@ resource "google_compute_instance" "aria_server" {
 
   name         = var.instance_name
   machine_type = "e2-highmem-4"
-  tags         = var.network_tags
+  tags         = ["minecraft-server"]
   zone         = var.zone
 
   boot_disk {

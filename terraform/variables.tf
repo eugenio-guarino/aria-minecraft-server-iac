@@ -2,10 +2,6 @@ variable "region" {
   type = string
 }
 
-variable "network_tags" {
-  type = set(string)
-}
-
 variable "project_id" {
   description = "The project_id ID"
   type        = string
