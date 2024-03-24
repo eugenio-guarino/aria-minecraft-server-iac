@@ -7,7 +7,7 @@ env:
   tf_version: "1.4.0"
   tf_working_dir: "./terraform"
   TF_VAR_region: ${{ variables.REGION }}
-  TF_VAR_project: ${{ secrets.PROJECT_NAME }}
+  TF_VAR_project_id: ${{ secrets.PROJECT_NAME }}
   TF_VAR_zone: ${{ variables.ZONE }}
   TF_VAR_instance_name: ${{ variables.INSTANCE_NAME }}
   TF_VAR_service_account: ${{ secrets.GCP_SA_EMAIL}}
