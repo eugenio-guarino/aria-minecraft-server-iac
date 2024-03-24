@@ -20,5 +20,6 @@ sudo mount -o discard,defaults /dev/sdb /mnt/disks/aria-data-disk
 # generate SA key script
 openssl base64 -in yourfile.json -out output.txt
 
-# docs
+# docs links
 https://cloud.google.com/compute/docs/disks/format-mount-disk-linux
+https://github.com/marketplace/actions/telegram-notify
