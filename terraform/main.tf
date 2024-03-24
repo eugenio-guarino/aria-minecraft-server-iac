@@ -21,7 +21,7 @@ resource "google_compute_instance" "aria_server" {
 
   service_account {
     email  = var.service_account
-    scopes =  ["cloud-platform"]
+    scopes = ["cloud-platform"]
   }
 
   scheduling {
