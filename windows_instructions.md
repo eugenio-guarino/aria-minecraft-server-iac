@@ -11,7 +11,7 @@ To join the Aria Minecraft Server, follow these steps:
 
 2. **Install Minecraft Forge**
    - Minecraft Forge is required to play with mods on our server. Follow these steps:
-     - Download Minecraft Forge from [here](https://storage.googleapis.com/aria-minecraft-server/forge-1.19.2-43.2.0-installer.jar)
+     - Download Minecraft Forge from [here](https://storage.googleapis.com/aria-server-files/forge-1.19.2-43.2.0-installer.jar)
      - After the download is complete, open the downloaded .jar file. Ensure that you have Java installed on your PC.
      - Select install client and proceed with the installation.
 
@@ -19,12 +19,12 @@ To join the Aria Minecraft Server, follow these steps:
    - Launch the Minecraft Java Edition using the Official Launcher.
    - Select the Minecraft Forge profile, which can be found in the launcher if you followed step 2 correctly.
    - Open the profile's mods location from the options of the Offical launcher.
-   - Download the mods archive from [here](https://storage.googleapis.com/aria-minecraft-server/mods.zip). 
+   - Download the mods archive from [here](https://storage.googleapis.com/aria-server-files/mods.zip). 
    - Empty the archive's content in the mods directory of your forge installation.
    - Press Play. This will install the mods.
 
 4. **Turn On the server**
-   - Download the launcher from [here](https://storage.googleapis.com/aria-minecraft-server/aria-launcher.exe).
+   - Download the launcher from [here](https://storage.googleapis.com/aria-server-files/aria-launcher.exe).
    - Ignore the warning messages, download the application and run it.
    - Insert the secret code which you can find pinned in the Telegram group.
    - Press the button 'Start up server'.
