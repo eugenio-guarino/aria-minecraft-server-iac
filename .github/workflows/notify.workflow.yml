@@ -63,4 +63,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            new address: ${{steps.regex-match.outputs.match}}
+            ${{steps.regex-match.outputs.match}}
