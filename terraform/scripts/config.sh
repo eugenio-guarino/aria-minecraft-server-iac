@@ -4,13 +4,14 @@ sudo su
 # upgrade
 apt update
 apt upgrade -y
-apt install -y git
 
-apt install bc
+# install general packages
+apt install -y git
+apt install -y bc
 
 # ops agent
 curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
-sudo bash add-google-cloud-ops-agent-repo.sh --also-install
+bash add-google-cloud-ops-agent-repo.sh --also-install
 rm add-google-cloud-ops-agent-repo.sh
 
 # Install Docker
@@ -25,17 +26,16 @@ mkdir /opt/scripts
 gsutil -m cp -r gs://aria-minecraft-server/scripts/* /opt/scripts/
 
 # mount minecraft data disk
-sudo mkdir -p /mnt/disks/aria-data-disk
-sudo mount -o discard,defaults /dev/sdb /mnt/disks/aria-data-disk
+mkdir -p /mnt/disks/aria-data-disk
+mount -o discard,defaults /dev/sdb /mnt/disks/aria-data-disk
 
 # run minecraft docker image
-sudo docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
+docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
     -e TYPE=FORGE -e MEMORY=25G -e DEBUG=true \
-    -e ENABLE_AUTOSTOP=TRUE -e AUTOSTOP_TIMEOUT_EST=3600\
-    -e AUTOSTOP_TIMEOUT_INIT=1800
+    -e ENABLE_AUTOSTOP=TRUE -e AUTOSTOP_TIMEOUT_EST=600 \
+    -e AUTOSTOP_TIMEOUT_INIT=800 \
     -e VERSION=1.19.2 -e FORGE_VERSION=43.2.0 \
     -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server:java17
-
 
 # send out ip address
 nohup bash /opt/scripts/notify.sh </dev/null &>/dev/null &
