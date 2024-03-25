@@ -1,7 +1,7 @@
-# Windows Setup Guide
-
 ### Minecraft Version: 1.19.2
 ### Forge Version: 43.2.0
+
+# Windows Setup Guide
 
 1. **Install Minecraft Launcher**
     - Download the Official Minecraft Launcher from the [Microsoft Store](https://www.microsoft.com/store/productId/9NXP44L49SHJ).
@@ -31,7 +31,5 @@
    - After following the 4th step, wait for the IP address of the server to be provided in the Telegram group.
    - Open the Minecraft launcher, select the Forge profile where your mods are installed, and press play.
    - Once the game is loaded, go to multiplayer and connect directly using the IP address.
-
-If you encounter any issues during installation or while playing, feel free to reach out for assistance.
 
 Happy gaming! 🚀
