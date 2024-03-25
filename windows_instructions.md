@@ -24,10 +24,10 @@ To join the Aria Minecraft Server, follow these steps:
    - Press Play. This will install the mods.
 
 4. **Turn On the server**
-   - Download the client from [here](https://storage.googleapis.com/aria-minecraft-server/aria-client.exe).
+   - Download the launcher from [here](https://storage.googleapis.com/aria-minecraft-server/aria-launcher.exe).
    - Ignore the warning messages, download the application and run it.
    - Insert the secret code which you can find pinned in the Telegram group.
-   - Press the button 'Avvia il server'.
+   - Press the button 'Start up server'.
 
 5. **Connect to server**
    - After following the 4th step, go to the telegram group and wait for the IP address of the server.
