@@ -1,7 +1,7 @@
 resource "google_compute_instance" "aria_server" {
 
   name         = var.instance_name
-  machine_type = "e2-highmem-2"
+  machine_type = "e2-highmem-8"
   tags         = ["minecraft-server"]
   zone         = var.zone
 
