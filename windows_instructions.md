@@ -1,9 +1,7 @@
 # Windows Setup Guide
 
-## Minecraft Version: 1.19.2
-## Forge Version: 43.2.0
-
-To join the Aria Minecraft Server, follow these steps:
+### Minecraft Version: 1.19.2
+### Forge Version: 43.2.0
 
 1. **Install Minecraft Launcher**
     - Download the Official Minecraft Launcher from the [Microsoft Store](https://www.microsoft.com/store/productId/9NXP44L49SHJ).
