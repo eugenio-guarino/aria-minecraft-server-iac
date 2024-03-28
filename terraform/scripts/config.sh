@@ -37,6 +37,9 @@ docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
     -e VERSION=1.19.2 -e FORGE_VERSION=43.2.0 \
     -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server:java17
 
+
+sleep 2m
+
 # send out ip address
 nohup bash /opt/scripts/notify.sh </dev/null &>/dev/null &
 
