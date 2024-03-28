@@ -7,6 +7,9 @@
     - Download the Official Minecraft Launcher from the [Microsoft Store](https://www.microsoft.com/store/productId/9NXP44L49SHJ).
     - Open the Minecraft launcher and set it up. You may log in with your Microsoft account if you wish.
 
+1. **Alternative: Download Sklauncher**
+   - Download Sk Launchere from [here](https://skmedix.pl/)
+
 2. **Install Minecraft Forge**
    - Minecraft Forge is required to play on the server. Follow these steps:
      - Download Minecraft Forge from [here](https://storage.googleapis.com/aria-server-files/forge-1.19.2-43.2.0-installer.jar).
@@ -14,9 +17,8 @@
      - Select "install client" and proceed with the installation.
 
 3. **Install Mods**
-   - Launch Minecraft Java Edition using the Official Launcher.
-   - Select the Minecraft Forge profile, which can be found in the launcher if you followed step 2 correctly.
-   - Open the profile's mods location from the options of the Official Launcher.
+   - Press Win + R and type %appdata%
+   - Go to .minecraft folder and create a folder called mods if there isn't one.
    - Download the mods archive from [here](https://storage.googleapis.com/aria-server-files/mods.zip). 
    - Extract the contents of the archive into the mods directory of your Forge installation.
    - Press Play. This will install the mods.
