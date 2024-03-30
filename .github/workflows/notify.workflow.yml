@@ -20,6 +20,7 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@master
+    
 
       - name: set GCP project
         run: gcloud config set project ${{ secrets.PROJECT_NAME }}

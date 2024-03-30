@@ -21,6 +21,14 @@ jobs:
 
       - name: checkout
         uses: actions/checkout@master
+      
+      - name: send telegram message
+        uses: appleboy/telegram-action@master
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            ${{ vars.BEGIN_DESTROY_MESSAGE }}
 
       - name: set GCP project
         run: gcloud config set project ${{ secrets.PROJECT_NAME }}
