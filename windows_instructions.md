@@ -22,6 +22,7 @@
    - Download the mods archive from [here](https://storage.googleapis.com/aria-server-files/mods.zip). 
    - Extract the contents of the archive into the mods directory of your Forge installation.
    - Press Play. This will install the mods.
+   - [Complementary shaders installer](https://storage.googleapis.com/aria-server-files/Complementary-Installer-1.1.3.jar)
 
 4. **Turn On the Server**
    - Download the launcher from [here](https://storage.googleapis.com/aria-server-files/aria-launcher.exe).
