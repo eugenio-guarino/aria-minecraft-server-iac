@@ -31,7 +31,7 @@ mount -o discard,defaults /dev/sdb /mnt/disks/aria-data-disk
 
 # run minecraft docker image
 docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
-    -e TYPE=FORGE -e MEMORY=28G -e DEBUG=true \
+    -e TYPE=FORGE -e MEMORY=28G -e DEBUG=true -e PVP=false \
     -e ENABLE_AUTOSTOP=TRUE -e AUTOSTOP_TIMEOUT_EST=300 \
     -e AUTOSTOP_TIMEOUT_INIT=500 -e ONLINE_MODE=false \
     -e VERSION=1.19.2 -e FORGE_VERSION=43.2.0 \
