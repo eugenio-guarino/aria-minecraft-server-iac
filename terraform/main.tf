@@ -13,6 +13,7 @@ resource "google_compute_instance" "aria_server" {
     }
   }
 
+
   network_interface {
     network = "default"
 
@@ -35,6 +36,7 @@ resource "google_compute_instance" "aria_server" {
     # Enable compute os-login GCP role at instance level
     enable-oslogin = "TRUE"
     startup-script = file("./scripts/config.sh")
+    shutdown-script = file("./scripts/shutdown.sh")
   }
 
   lifecycle {
