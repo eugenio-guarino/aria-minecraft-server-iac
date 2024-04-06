@@ -44,5 +44,5 @@ sleep 2m
 nohup bash /opt/scripts/notify.sh </dev/null &>/dev/null &
 
 # autodestroy when CPU usage is low
-nohup bash /opt/scripts/auto_destroy.sh </dev/null &>/dev/null &
+# nohup bash /opt/scripts/auto_destroy.sh </dev/null &>/dev/null &
 
