@@ -38,7 +38,7 @@ docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
     -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server:java17
 
 
-sleep 2m
+sleep 90s
 
 # send out ip address
 nohup bash /opt/scripts/notify.sh </dev/null &>/dev/null &
