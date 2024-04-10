@@ -61,9 +61,9 @@
 
 7. **Recommended: xaeroworldmap reset fix**
    - Press Win + R and type %appdata%
-   - Go to **.minecraft** folder and create and go to folder called **config**.
+   - Go to **.minecraft** folder and go to folder called **config**.
    - Find the file called xaeroworldmap.txt and open it with a text editor
-   - Modify the line differentiateByServerAddress:true to differentiateByServerAddress:false
+   - Modify the line **differentiateByServerAddress:true** to **differentiateByServerAddress:false**
    - Save the file. Now it will not reset when AriA changes its IP address.
 
 
