@@ -22,7 +22,6 @@
    - Download the mods archive from [here](https://storage.googleapis.com/aria-server-files/mods.zip). 
    - Extract the contents of the archive into the mods directory of your Forge installation.
    - Press Play. This will install the mods.
-   - optional: [Complementary shaders installer](https://storage.googleapis.com/aria-server-files/Complementary-Installer-1.1.3.jar)
 
 4. **Turn On the Server**
    - Download the launcher from [here](https://storage.googleapis.com/aria-server-files/aria-launcher.exe).
@@ -34,5 +33,12 @@
    - After following the 4th step, wait for the IP address of the server to be provided in the Telegram group.
    - Open the Minecraft launcher, select the Forge profile where your mods are installed, and press play.
    - Once the game is loaded, go to multiplayer and connect directly using the IP address.
+
+6. **Optional: xaeroworldmap reset fix**
+   - Press Win + R and type %appdata%
+   - Go to .minecraft folder and create and go to folder called config.
+   - Find the file called xaeroworldmap.txt and open it with a text editor
+   - Modify the line differentiateByServerAddress:true to differentiateByServerAddress:false
+   - Save the file. Now it will not reset when AriA changes its IP address.
 
 Happy gaming! 🚀
