@@ -54,7 +54,7 @@
    5. Foliage
    6. Excalibur-BiomesOPlenty
    7. Excalibur_V1.19.4
-   8. (Add any other packs in your list here, if any)
+   8. Supplementaries
    9. Default
    10. Mode resources
    11. Exotic birds
