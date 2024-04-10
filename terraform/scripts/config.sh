@@ -45,7 +45,7 @@ docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
 sleep 90s
 
 # # send out ip address
-nohup bash /opt/scripts/notify.sh </dev/null &>/dev/null &
+nohup bash /opt/scripts/send_ip_address.sh </dev/null &>/dev/null &
 
 # # autodestroy when CPU usage is low
 nohup bash /opt/scripts/auto_destroy.sh </dev/null &>/dev/null &

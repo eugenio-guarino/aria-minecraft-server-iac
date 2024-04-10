@@ -34,32 +34,37 @@
    - Open the Minecraft launcher, select the Forge profile where your mods are installed, and press play.
    - Once the game is loaded, go to multiplayer and connect directly using the IP address.
 
-6. **reccomended: xaeroworldmap reset fix**
+6. **Recommended: install resource packs**
+   Recommended Resource Packs Installation:
+
+   - Excalibur-BiomesOPlenty: [Download Link](https://storage.googleapis.com/aria-server-files/Excalibur-BiomesOPlenty%2B1.14_BETA%20(2).zip)
+   - Excalibur_V1.19.4: [Download Link](https://storage.googleapis.com/aria-server-files/Excalibur_V1.19.4.zip)
+   - Foliage: [Download Link](https://storage.googleapis.com/aria-server-files/Foliage%2B-Resource-Pack-16x-1.19.zip)
+   - FreshAnimations: [Download Link](https://storage.googleapis.com/aria-server-files/FreshAnimations_v1.7.zip)
+   - GloriousGlowstone: [Download Link](https://storage.googleapis.com/aria-server-files/GloriousGlowstone-Resource-Pack-16x-1.19.zip)
+   - Terrrs-Animals-Redone: [Download Link](https://storage.googleapis.com/aria-server-files/Terrrs-Animals-Redone-Resource-Pack-1.19.2.zip)
+   - more_villagers_RP: [Download Link](https://storage.googleapis.com/aria-server-files/more_villagers_RP.zip)
+
+   To install, go to the resource packs section in your game client and arrange them in this specific order from top to bottom:
+
+   1. Terrrs-Animals-Redone
+   2. FreshAnimations
+   3. more_villagers_RP
+   4. GloriousGlowstone
+   5. Foliage
+   6. Excalibur-BiomesOPlenty
+   7. Excalibur_V1.19.4
+   8. (Add any other packs in your list here, if any)
+   9. Default
+   10. Mode resources
+   11. Exotic birds
+
+7. **Recommended: xaeroworldmap reset fix**
    - Press Win + R and type %appdata%
    - Go to **.minecraft** folder and create and go to folder called **config**.
    - Find the file called xaeroworldmap.txt and open it with a text editor
    - Modify the line differentiateByServerAddress:true to differentiateByServerAddress:false
    - Save the file. Now it will not reset when AriA changes its IP address.
 
-7. **reccomended: install resource packs**
-   - [here](https://storage.googleapis.com/aria-server-files/Excalibur-BiomesOPlenty%2B1.14_BETA%20(2).zip)
-   - [here](https://storage.googleapis.com/aria-server-files/Excalibur_V1.19.4.zip)
-   - [here](https://storage.googleapis.com/aria-server-files/Foliage%2B-Resource-Pack-16x-1.19.zip)
-   - [here](https://storage.googleapis.com/aria-server-files/FreshAnimations_v1.7.zip)
-   - [here](https://storage.googleapis.com/aria-server-files/GloriousGlowstone-Resource-Pack-16x-1.19.zip)
-   - [here](https://storage.googleapis.com/aria-server-files/Terrrs-Animals-Redone-Resource-Pack-1.19.2.zip)
-   - [here](https://storage.googleapis.com/aria-server-files/more_villagers_RP.zip)
-   - go to resource packs in your clients and order them in this order (top to bottom) in the **selected** column:
-     - terrs animal redone
-     - fresh animations
-     - more villagers
-     - glorious glowstone
-     - foliage
-     - excalibur biomes of plenty
-     - excalibur
-     - supplementaries
-     - default
-     - mode resources
-     - exotic birds
 
 Happy gaming! 🚀

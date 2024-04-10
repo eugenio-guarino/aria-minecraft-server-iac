@@ -2,7 +2,7 @@ name: send ip address to players
 
 on:
   repository_dispatch:
-    types: [notify-players]
+    types: [send-ip-address]
 env:
   tf_version: "1.4.0"
   tf_working_dir: "./terraform"
