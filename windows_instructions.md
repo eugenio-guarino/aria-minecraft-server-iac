@@ -34,9 +34,7 @@
    - Open the Minecraft launcher, select the Forge profile where your mods are installed, and press play.
    - Once the game is loaded, go to multiplayer and connect directly using the IP address.
 
-6. **Recommended: install resource packs**
-   Recommended Resource Packs Installation:
-
+6. **Recommended: download and install the AriA's resource packs**
    - Excalibur-BiomesOPlenty: [Download Link](https://storage.googleapis.com/aria-server-files/Excalibur-BiomesOPlenty%2B1.14_BETA%20(2).zip)
    - Excalibur_V1.19.4: [Download Link](https://storage.googleapis.com/aria-server-files/Excalibur_V1.19.4.zip)
    - Foliage: [Download Link](https://storage.googleapis.com/aria-server-files/Foliage%2B-Resource-Pack-16x-1.19.zip)
@@ -54,9 +52,9 @@
    5. Foliage
    6. Excalibur-BiomesOPlenty
    7. Excalibur_V1.19.4
-   8. Supplementaries
+   8. Supplementaries Generated
    9. Default
-   10. Mode resources
+   10. Mod resources
    11. Exotic birds
 
 7. **Recommended: xaeroworldmap reset fix**
