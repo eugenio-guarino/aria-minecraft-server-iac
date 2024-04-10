@@ -18,6 +18,10 @@ jobs:
     name: 'Terraform'
     runs-on: ubuntu-latest
     steps:
+
+      - name: checkout
+        uses: actions/checkout@master
+      
       - name: send telegram message
         uses: appleboy/telegram-action@master
         with:
@@ -25,7 +29,7 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             ${{ vars.BEGIN_DESTROY_MESSAGE }}
-            
+
       - name: set GCP project
         run: gcloud config set project ${{ secrets.PROJECT_NAME }}
 
@@ -37,7 +41,6 @@ jobs:
           tf_actions_working_dir: ${{ env.tf_working_dir }}
           tf_actions_subcommand: init
           args: '-backend-config="bucket=${{ secrets.GCP_BUCKET }}" -backend-config="prefix=terraform-state"'
-          
 
       - name: "Terraform destroy"
         uses: ops18/terraform-github-actions@master
