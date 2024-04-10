@@ -24,7 +24,7 @@
    - Press Play. This will install the mods.
 
 5. **Connect to the Server**
-   - Download the launcher from [here](https://storage.googleapis.com/aria-server-files/aria-launcher.exe).
+   - Download the server activator from [here](https://storage.googleapis.com/aria-server-files/aria-launcher.exe).
    - Ignore any warning messages, download the application, and run it.
    - Enter the secret code, which you can find pinned in the Telegram group.
    - Press the "Start up server" button.
