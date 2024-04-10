@@ -8,7 +8,7 @@
     - Open the Minecraft launcher and set it up. You may log in with your Microsoft account if you wish.
 
 1. **Alternative: Download Sklauncher**
-   - Download Sk Launchere from [here](https://skmedix.pl/)
+   - Download Sk Launcher from [here](https://skmedix.pl/)
 
 2. **Install Minecraft Forge**
    - Minecraft Forge is required to play on the server. Follow these steps:
