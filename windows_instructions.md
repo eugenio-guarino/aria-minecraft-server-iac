@@ -18,7 +18,7 @@
 
 3. **Install Mods**
    - Press Win + R and type %appdata%
-   - Go to .minecraft folder and create a folder called mods if there isn't one.
+   - Go to .minecraft folder and create a folder called **mods** if there isn't already one.
    - Download the mods archive from [here](https://storage.googleapis.com/aria-server-files/mods.zip). 
    - Extract the contents of the archive into the mods directory of your Forge installation.
    - Press Play. This will install the mods.
