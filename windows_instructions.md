@@ -5,6 +5,7 @@
 
 1. **Download and Install Sklauncher**
    - Download Sk Launcher from [here](https://skmedix.pl/)
+   - Go through the setup process to install the game.
 
 2. **Install Minecraft Forge**
    - Minecraft Forge is required to play on the server. Follow these steps:
