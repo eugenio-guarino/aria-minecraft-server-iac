@@ -26,7 +26,7 @@
    - Press the "Start up server" button.
    - Wait for the IP address of the server to be provided in the Telegram group.
    - On your minecraft go to "multiplayer" and select "Direct connection". 
-   - Provide the IP address.
+   - Provide the IP address which you can find in the Telegram groupchat.
 
 5. **Recommended: download and install the AriA's resource packs**
    - Excalibur-BiomesOPlenty: [Download Link](https://github.com/eugenio-guarino/aria-minecraft-server-files/raw/main/Excalibur-BiomesOPlenty%2B1.14_BETA.zip)
