@@ -3,28 +3,24 @@
 
 # Windows Setup Guide
 
-1. **Install Minecraft Launcher**
-    - Download the Official Minecraft Launcher from the [Microsoft Store](https://www.microsoft.com/store/productId/9NXP44L49SHJ).
-    - Open the Minecraft launcher and set it up. You may log in with your Microsoft account if you wish.
-
-2. **Alternative: Download Sklauncher**
+1. **Download and Install Sklauncher**
    - Download Sk Launcher from [here](https://skmedix.pl/)
 
-3. **Install Minecraft Forge**
+2. **Install Minecraft Forge**
    - Minecraft Forge is required to play on the server. Follow these steps:
-     - Download Minecraft Forge from [here](https://storage.googleapis.com/aria-server-files/forge-1.19.2-43.2.0-installer.jar).
+     - Download Minecraft Forge from [here](https://github.com/eugenio-guarino/aria-minecraft-server-files/raw/main/forge-1.19.2-43.2.0-installer.jar).
      - After the download is complete, open the downloaded .jar file. Ensure that you have Java installed on your PC.
      - Select "install client" and proceed with the installation.
 
-4. **Install Mods**
+3. **Install Mods**
    - Press Win + R and type %appdata%
    - Go to .minecraft folder and create a folder called **mods** if there isn't already one.
-   - Download the mods archive from [here](https://storage.googleapis.com/aria-server-files/mods.zip). 
-   - Extract the contents of the archive into the mods directory of your Forge installation.
-   - Press Play. This will install the mods.
+   - Download the mods archives from [here](https://github.com/eugenio-guarino/aria-minecraft-server-files/raw/main/mods-1.zip) and [here](https://github.com/eugenio-guarino/aria-minecraft-server-files/raw/main/mods-2.zip) (You need to download both). 
+   - Extract the contents of the archives into the mods directory of your Forge installation: press windows button + R, type %appdata%, press enter, locate and open the ".minecraft" directory and create a folder called "mods" if it isn't already there.
+   - Open your installed launcher, select the Forge profile that you installed and press play.
 
-5. **Connect to the Server**
-   - Download the server activator from [here](https://storage.googleapis.com/aria-server-files/aria-launcher.exe).
+4. **Connect to the Server**
+   - Download the server activator from [here](https://github.com/eugenio-guarino/aria-minecraft-server-files/raw/main/aria-launcher.exe).
    - Ignore any warning messages, download the application, and run it.
    - Enter the secret code, which you can find pinned in the Telegram group.
    - Press the "Start up server" button.
@@ -32,14 +28,14 @@
    - On your minecraft go to "multiplayer" and select "Direct connection". 
    - Provide the IP address.
 
-6. **Recommended: download and install the AriA's resource packs**
-   - Excalibur-BiomesOPlenty: [Download Link](https://storage.googleapis.com/aria-server-files/Excalibur-BiomesOPlenty%2B1.14_BETA%20(2).zip)
-   - Excalibur_V1.19.4: [Download Link](https://storage.googleapis.com/aria-server-files/Excalibur_V1.19.4.zip)
-   - Foliage: [Download Link](https://storage.googleapis.com/aria-server-files/Foliage%2B-Resource-Pack-16x-1.19.zip)
-   - FreshAnimations: [Download Link](https://storage.googleapis.com/aria-server-files/FreshAnimations_v1.7.zip)
-   - GloriousGlowstone: [Download Link](https://storage.googleapis.com/aria-server-files/GloriousGlowstone-Resource-Pack-16x-1.19.zip)
-   - Terrrs-Animals-Redone: [Download Link](https://storage.googleapis.com/aria-server-files/Terrrs-Animals-Redone-Resource-Pack-1.19.2.zip)
-   - more_villagers_RP: [Download Link](https://storage.googleapis.com/aria-server-files/more_villagers_RP.zip)
+5. **Recommended: download and install the AriA's resource packs**
+   - Excalibur-BiomesOPlenty: [Download Link](https://github.com/eugenio-guarino/aria-minecraft-server-files/raw/main/Excalibur-BiomesOPlenty%2B1.14_BETA.zip)
+   - Excalibur_V1.19.4: [Download Link](https://github.com/eugenio-guarino/aria-minecraft-server-files/raw/main/Excalibur_V1.19.4.zip)
+   - Foliage: [Download Link](https://github.com/eugenio-guarino/aria-minecraft-server-files/raw/main/Foliage%2B-Resource-Pack-16x-1.19.zip)
+   - FreshAnimations: [Download Link](https://github.com/eugenio-guarino/aria-minecraft-server-files/raw/main/FreshAnimations_v1.7.zip)
+   - GloriousGlowstone: [Download Link](https://github.com/eugenio-guarino/aria-minecraft-server-files/raw/main/GloriousGlowstone-Resource-Pack-16x-1.19.zip)
+   - Terrrs-Animals-Redone: [Download Link](https://github.com/eugenio-guarino/aria-minecraft-server-files/raw/main/Terrrs-Animals-Redone-Resource-Pack-1.19.2.zip)
+   - more_villagers_RP: [Download Link](https://github.com/eugenio-guarino/aria-minecraft-server-files/raw/main/more_villagers_RP.zip)
 
    To install, go to the resource packs section in your game client and arrange them in this specific order from top to bottom:
 
@@ -55,7 +51,7 @@
    10. Mod resources
    11. Exotic birds
 
-7. **Recommended: xaeroworldmap reset fix**
+6. **Recommended: xaeroworldmap reset fix**
    - Press Win + R and type %appdata%
    - Go to **.minecraft** folder and go to folder called **config**.
    - Find the file called xaeroworldmap.txt and open it with a text editor
