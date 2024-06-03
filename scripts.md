@@ -1,7 +1,7 @@
 ## Player Time datapack configuration
 ```
 # reset times
-/scoreboard players reset @a custom.total_world_time to all players in server
+/scoreboard players reset * custom.total_world_time to all players in server
 
 # hide action bar for all players
 /execute as @a run trigger playtime_display set 0 (or 1)
