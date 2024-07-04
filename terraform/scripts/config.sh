@@ -5,9 +5,6 @@ sudo su
 mkdir -p /mnt/disks/aria-data-disk
 mount -o discard,defaults /dev/sdb /mnt/disks/aria-data-disk
 
-# update mods
-gsutil -m rsync -d gs://aria-minecraft-server/mods /mnt/disks/aria-data-disk/mods
-
 # create scripts for server
 mkdir /opt/scripts
 gsutil -m cp -r gs://aria-minecraft-server/scripts/* /opt/scripts/
