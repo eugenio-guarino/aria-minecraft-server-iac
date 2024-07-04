@@ -29,18 +29,18 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 apt update
 apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
-# # # run minecraft docker image
-# docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
-#     -e TYPE=FORGE -e MEMORY=28G -e DEBUG=true -e PVP=false \
-#     -e ENABLE_AUTOSTOP=TRUE -e AUTOSTOP_TIMEOUT_EST=350 \
-#     -e AUTOSTOP_TIMEOUT_INIT=600 -e ONLINE_MODE=false \
-#     -e VERSION=1.19.2 -e FORGE_VERSION=43.2.0 \
-#     -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server:java17
+# # run minecraft docker image
+docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
+    -e TYPE=FORGE -e MEMORY=28G -e DEBUG=true -e PVP=false \
+    -e ENABLE_AUTOSTOP=TRUE -e AUTOSTOP_TIMEOUT_EST=350 \
+    -e AUTOSTOP_TIMEOUT_INIT=600 -e ONLINE_MODE=false \
+    -e VERSION=1.19.2 -e FORGE_VERSION=43.2.0 \
+    -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server:java17
 
-# sleep 90s
+sleep 90s
 
-# ## send the ip address to the telegram group
-# nohup bash /opt/scripts/send_ip_address.sh </dev/null &>/dev/null &
+## send the ip address to the telegram group
+nohup bash /opt/scripts/send_ip_address.sh </dev/null &>/dev/null &
 
-# # # autodestroy when CPU usage is low
-# nohup bash /opt/scripts/auto_destroy.sh </dev/null &>/dev/null &
+# # autodestroy when CPU usage is low
+nohup bash /opt/scripts/auto_destroy.sh </dev/null &>/dev/null &
