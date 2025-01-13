@@ -1,23 +1,25 @@
 #!/bin/bash
+set -e  # Stop on any error
+
 sudo su
 
-# mount minecraft data disk
+# Mount minecraft data disk
 mkdir -p /mnt/disks/aria-data-disk
 mount -o discard,defaults /dev/sdb /mnt/disks/aria-data-disk
 
-# create scripts for server
-mkdir /opt/scripts
+# Create scripts for server
+mkdir -p /opt/scripts
 gsutil -m cp -r gs://aria-minecraft-server/scripts/* /opt/scripts/
 
-# upgrade
+# Upgrade system packages
 apt update
 apt upgrade -y
+dpkg --configure -a  # Ensure no pending configurations
 
-# install general packages
-apt install -y git
-apt install -y bc
+# Install general packages
+apt install -y git bc
 
-# ops agent
+# Install Ops Agent
 curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
 bash add-google-cloud-ops-agent-repo.sh --also-install
 rm add-google-cloud-ops-agent-repo.sh
@@ -29,7 +31,7 @@ echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docke
 apt update
 apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
-# run minecraft docker image
+# Run Minecraft docker image
 docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
     -e TYPE=FORGE -e MEMORY=28G -e DEBUG=true -e PVP=false \
     -e ENABLE_AUTOSTOP=TRUE -e AUTOSTOP_TIMEOUT_EST=350 \
@@ -39,8 +41,8 @@ docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
 
 sleep 90s
 
-## send the ip address to the telegram group
+# Send the IP address to the Telegram group
 nohup bash /opt/scripts/send_ip_address.sh </dev/null &>/dev/null &
 
-# # autodestroy when CPU usage is low
+# Auto-destroy when CPU usage is low
 nohup bash /opt/scripts/auto_destroy.sh </dev/null &>/dev/null &
