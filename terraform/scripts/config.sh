@@ -14,12 +14,12 @@ mkdir -p /opt/scripts
 gsutil -m cp -r gs://aria-minecraft-server/scripts/* /opt/scripts/
 
 # Upgrade system packages
-apt update
-apt upgrade -y
+apt-get update
+apt-get upgrade -y
 dpkg --configure -a  # Ensure no pending configurations
 
 # Install general packages
-apt install -y git bc
+apt-get install -y git bc
 
 # Install Ops Agent
 curl -sSO https://dl.google.com/cloudagents/add-google-cloud-ops-agent-repo.sh
@@ -27,11 +27,11 @@ bash add-google-cloud-ops-agent-repo.sh --also-install
 rm add-google-cloud-ops-agent-repo.sh
 
 # Install Docker
-apt install -y ca-certificates curl gnupg lsb-release
+apt-get install -y ca-certificates curl gnupg lsb-release
 curl -fsSL https://download.docker.com/linux/debian/gpg | gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-apt update
-apt install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/debian $(lsb_release -cs) stable" | sudo tee /etc/apt-get/sources.list.d/docker.list > /dev/null
+apt-get update
+apt-get install -y docker-ce docker-ce-cli containerd.io docker-compose-plugin
 
 # Run Minecraft docker image
 docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
