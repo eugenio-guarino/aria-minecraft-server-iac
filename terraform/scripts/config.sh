@@ -5,6 +5,9 @@ exec > output.txt 2>&1
 
 sudo su
 
+#no interactive input at all
+export DEBIAN_FRONTEND=noninteractive
+
 # Mount minecraft data disk
 mkdir -p /mnt/disks/aria-data-disk
 mount -o discard,defaults /dev/sdb /mnt/disks/aria-data-disk
