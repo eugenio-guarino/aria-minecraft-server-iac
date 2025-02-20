@@ -16,7 +16,6 @@ gsutil -m cp -r gs://aria-minecraft-server/scripts/* /opt/scripts/
 # Upgrade system packages
 apt-get update
 apt-get upgrade -y
-dpkg --configure -a  # Ensure no pending configurations
 
 # Install general packages
 apt-get install -y git bc
