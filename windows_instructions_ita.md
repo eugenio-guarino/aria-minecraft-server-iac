@@ -51,17 +51,14 @@
 
    Poi vai nella sezione Resource Pack nel client di gioco e disponili in quest’ordine (dall’alto verso il basso):
 
-   1. Terrrs-Animals-Redone  
-   2. FreshAnimations  
-   3. more_villagers_RP  
-   4. GloriousGlowstone  
-   5. Foliage  
-   6. Excalibur-BiomesOPlenty  
-   7. Excalibur_V1.19.4  
-   8. Supplementaries Generated  
-   9. Default  
-   10. Mod resources  
-   11. Exotic birds
+   1. FreshAnimations  
+   2. Foliage  
+   3. Excalibur-BiomesOPlenty  
+   4. Excalibur_V1.19.4  
+   5. Supplementaries Generated  
+   6. Default  
+   7. Mod resources  
+   8. Exotic birds
 
 7. **Consigliato: Fix per il reset di xaeroworldmap**
    - Premi `Win + R` e digita `%appdata%`.
