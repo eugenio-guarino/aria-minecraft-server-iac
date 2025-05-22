@@ -79,9 +79,6 @@ Fabric è necessario per caricare le mod del server.
 
 ### 5. Avvia il Server
 
-Il server va in standby quando non è in uso.  
-Per riattivarlo:
-
 1. Scarica l'attivatore da:  
    [🖥️ aria-startup-client.exe](https://github.com/eugenio-guarino/aria-minecraft-server-windows-client/releases/download/v2.0/aria-startup-client.exe)
 
@@ -97,6 +94,7 @@ Per riattivarlo:
 
 5. Dopo qualche istante riceverai l’indirizzo IP del server nel gruppo Telegram
 
+importante: il server si spegne quando non ci sono giocatori collegati
 ---
 
 ### 6. Collegati al Server
