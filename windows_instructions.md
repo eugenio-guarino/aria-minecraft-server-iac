@@ -1,78 +1,126 @@
-# AriA
+# 🌬️ AriA - Official Minecraft Server
 
-### Minecraft Version: 1.19.2  
-### Forge Version: 43.5.0
+> **Minecraft Version**: `1.20.1`  
+> **Type**: `Fabric`
 
-# Windows Setup Guide
+Welcome to the official **AriA** server!  
+This guide will walk you through installing everything you need to play.
 
-1. **Download and Install SKLauncher**
-   - Download SKLauncher from [here](https://skmedix.pl/)
-   - Go through the setup process to install the game.
+---
 
-2. **Install Minecraft Forge**
-   - Minecraft Forge is required to play on the server. Follow these steps:
-     - Download Minecraft Forge from [here](https://adfoc.us/serve/sitelinks/?id=271228&url=https://maven.minecraftforge.net/net/minecraftforge/forge/1.19.2-43.5.0/forge-1.19.2-43.5.0-installer.jar).
-     - After the download is complete, open the downloaded `.jar` file.  
-       *(Important: make sure Java is installed on your PC)*
-     - Select "Install client" and proceed with the installation.
+## 🛠️ Installation Guide (Windows)
 
-3. **Install Mods**
-   - Press `Win + R` and type `%appdata%`.
-   - Go to the `.minecraft` folder and create a folder called `mods` if there isn't already one.
-   - Download the `mods.zip` file from [here](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT). 
-   - Extract the contents of the archive into the `mods` folder:
-     - Press `Win + R`.
-     - Type `%appdata%` and press Enter.
-     - Open the `.minecraft` directory and create the `mods` folder if it doesn’t exist.
-     - Extract the contents of the archive into the `mods` folder
-   - Open your installed launcher, select the Forge profile, and press "Play".
+### 1. Install a Minecraft Launcher
 
-4. **Turn On AriA Server**  
-   AriA goes to sleep whenever it is not in use. To turn it on, follow these steps:
-   - Download the server activator from [here](https://github.com/eugenio-guarino/aria-minecraft-server-windows-client/releases/download/v2.0/aria-startup-client.exe).
-   - Ignore any warning messages, download the application, and run it.
-   - Enter the secret code, which you can find pinned in the Telegram group.
-   - Press the "Start MC server" button.
-   - Wait for the IP address of the server to be provided in the Telegram group.
+Choose one of the following:
 
-5. **Connect to AriA Server**
-   - Open your Minecraft game.
-   - In Minecraft, go to "Multiplayer" and select "Direct connection".
-   - Enter the IP address, which you can find in the Telegram group chat.
-   - Happy gaming! 🚀
+- **SKLauncher** (recommended if you don't own the official Minecraft)  
+  👉 Download from [https://skmedix.pl/](https://skmedix.pl/)
+- **Official Minecraft Launcher** (for Mojang/Microsoft account holders)
 
-6. **Recommended: Download and Install AriA's Resource Packs**
-   - Download the `resourcepacks.zip` file from [here](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT). 
-   - Extract the contents of the archive into the `resourcepacks` folder:
-     - Press `Win + R`.
-     - Type `%appdata%` and press Enter.
-     - Open the `.minecraft` directory and create the `resourcepacks` folder if it doesn’t exist.
-     - Extract the contents of the archive into the `resourcepacks` folder.
+After installation, make sure to select **version 1.20.1** of Minecraft.
 
-   Then go to the Resource Packs section in your game client and arrange them in this order (top to bottom):
+---
 
-   1. Foliage  
-   2. Excalibur-BiomesOPlenty  
-   3. Excalibur_V1.19.4  
-   4. Supplementaries Generated  
-   5. Default  
-   6. Mod resources  
-   7. Exotic birds
+### 2. Install Fabric (Mod Loader)
 
-7. **Recommended: xaeroworldmap Reset Fix**
-   - Press `Win + R` and type `%appdata%`.
-   - Go to the `.minecraft` folder, then open the `config` folder.
-   - Find the file named `xaeroworldmap.txt` and open it with a text editor.
-   - Change the following line:
+Fabric is required to load server mods.
 
-     ```txt
-     differentiateByServerAddress:true
-     ```
+1. Download the Fabric installer:  
+   [📥 fabric-installer-1.0.3.jar](https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.jar)
 
-     to:
+2. Run the downloaded `.jar` file  
+   ⚠️ Make sure you have Java installed!
 
-     ```txt
-     differentiateByServerAddress:false
-     ```
+3. Select version `1.20.1` and click **Install**
 
-   - Save the file. Now the map won’t reset when AriA changes its IP address.
+---
+
+### 3. Install the Mods
+
+1. Press `Win + R`, type:
+
+   ```
+   %appdata%
+   ```
+
+   and press Enter.
+
+2. Navigate to the `.minecraft` folder
+
+3. If it doesn't exist, create a folder named:
+
+   ```
+   mods
+   ```
+
+4. Download the mod pack from:  
+   [📦 mods.zip](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT)
+
+5. Extract the contents of the `.zip` archive into:
+
+   ```
+   .minecraft/mods
+   ```
+
+---
+
+### 4. (Optional) Install Resource Packs
+
+1. Download the pack from:  
+   [🎨 resourcepacks.zip](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT)
+
+2. Extract the contents into:
+
+   ```
+   .minecraft/resourcepacks
+   ```
+
+---
+
+## 🌐 Connecting to the AriA Server
+
+### 5. Start the Server
+
+The server goes into standby mode when not in use.  
+To wake it up:
+
+1. Download the server launcher:  
+   [🖥️ aria-startup-client.exe](https://github.com/eugenio-guarino/aria-minecraft-server-windows-client/releases/download/v2.0/aria-startup-client.exe)
+
+2. Ignore any security warnings and run the file
+
+3. Enter the **secret code** (available in the pinned message in the Telegram group)
+
+4. Click the button:
+
+   ```
+   Start MC server
+   ```
+
+5. The server IP address will be shared shortly in the Telegram group
+
+---
+
+### 6. Join the Server
+
+1. Launch Minecraft using the `Fabric` profile
+
+2. Navigate to:
+
+   ```
+   Multiplayer > Direct Connect
+   ```
+
+3. Enter the IP you received from the Telegram group
+
+4. Join the adventure and have fun! 🚀
+
+---
+
+## 📞 Support
+
+Need help?  
+Join our official Telegram group for support, updates, and news.
+
+**See you in the world of AriA!**
