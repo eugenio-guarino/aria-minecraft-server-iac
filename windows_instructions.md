@@ -26,8 +26,7 @@ After installation, make sure to select **version 1.20.1** of Minecraft.
 
 Fabric is required to load server mods.
 
-1. Download the Fabric installer:  
-   [📥 fabric-installer-1.0.3.jar](https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.jar)
+1. Download the [Fabric installer](https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.jar)
 
 2. Run the downloaded `.jar` file  
    ⚠️ Make sure you have Java installed!
@@ -54,8 +53,8 @@ Fabric is required to load server mods.
    mods
    ```
 
-4. Download the mod pack from:  
-   [📦 mods.zip](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT)
+4. Download the file `mods.zip` from  
+   [here](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT)
 
 5. Extract the contents of the `.zip` archive into:
 
@@ -67,8 +66,8 @@ Fabric is required to load server mods.
 
 ### 4. (Optional) Install Resource Packs
 
-1. Download the pack from:  
-   [🎨 resourcepacks.zip](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT)
+1. Download the file `resourcepacks.zip` from  
+   [here](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT)
 
 2. Extract the contents into:
 
@@ -81,9 +80,6 @@ Fabric is required to load server mods.
 ## 🌐 Connecting to the AriA Server
 
 ### 5. Start the Server
-
-The server goes into standby mode when not in use.  
-To wake it up:
 
 1. Download the server launcher:  
    [🖥️ aria-startup-client.exe](https://github.com/eugenio-guarino/aria-minecraft-server-windows-client/releases/download/v2.0/aria-startup-client.exe)
@@ -100,6 +96,7 @@ To wake it up:
 
 5. The server IP address will be shared shortly in the Telegram group
 
+important: The server shuts down when there are no players are in the server.
 ---
 
 ### 6. Join the Server
@@ -115,12 +112,3 @@ To wake it up:
 3. Enter the IP you received from the Telegram group
 
 4. Join the adventure and have fun! 🚀
-
----
-
-## 📞 Support
-
-Need help?  
-Join our official Telegram group for support, updates, and news.
-
-**See you in the world of AriA!**

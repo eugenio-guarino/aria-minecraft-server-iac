@@ -26,8 +26,7 @@ Dopo l’installazione, assicurati di selezionare la **versione 1.20.1** di Mine
 
 Fabric è necessario per caricare le mod del server.
 
-1. Scarica Fabric Installer da:  
-   [📥 fabric-installer-1.0.3.jar](https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.jar)
+1. Scarica il [Fabric Installer](https://maven.fabricmc.net/net/fabricmc/fabric-installer/1.0.3/fabric-installer-1.0.3.jar)
 
 2. Avvia il file `.jar` scaricato  
    ⚠️ Assicurati di avere Java installato!
@@ -54,8 +53,7 @@ Fabric è necessario per caricare le mod del server.
    mods
    ```
 
-4. Scarica il pacchetto mod da:  
-   [📦 mods.zip](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT)
+4. Scarica l'archivio `mods.zip` da [qui](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT)
 
 5. Estrai il contenuto dell’archivio `.zip` nella cartella:
 
@@ -67,8 +65,7 @@ Fabric è necessario per caricare le mod del server.
 
 ### 4. (Opzionale) Installa i Resource Packs
 
-1. Scarica il pacchetto da:  
-   [🎨 resourcepacks.zip](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT)
+1. Scarica l'archivio `resourcepacks.zip` da [qui](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT)
 
 2. Estrai il contenuto nella cartella:
 
@@ -115,12 +112,3 @@ Per riattivarlo:
 3. Inserisci l’IP ricevuto nel gruppo Telegram
 
 4. Unisciti e... buon divertimento! 🚀
-
----
-
-## 📞 Supporto
-
-Hai bisogno di aiuto?  
-Unisciti al nostro gruppo Telegram ufficiale per assistenza, aggiornamenti e novità.
-
-**Ti aspettiamo nel mondo di AriA!**
