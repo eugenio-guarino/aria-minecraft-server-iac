@@ -53,7 +53,7 @@ docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
     -e VERSION=1.20.1 \
     -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server:java17
 
-sleep 80s
+sleep 45s
 
 # Send the IP address to the Telegram group
 nohup bash /opt/scripts/send_ip_address.sh </dev/null &>/dev/null &
