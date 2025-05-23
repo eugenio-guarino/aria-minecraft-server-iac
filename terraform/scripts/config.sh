@@ -16,6 +16,9 @@ mount -o discard,defaults /dev/sdb /mnt/disks/aria-data-disk
 mkdir -p /opt/scripts
 gsutil -m cp -r gs://aria-minecraft-server/scripts/* /opt/scripts/
 
+#syncronyze mods
+gsutil -m rsync -d gs://aria-minecraft-server/mods /mnt/disks/aria-data-disk/mods
+
 # Upgrade system packages
 apt-get update
 apt-get upgrade -y
