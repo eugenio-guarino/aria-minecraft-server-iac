@@ -54,6 +54,7 @@ Fabric è necessario per caricare le mod del server.
    ```
 
 4. Scarica l'archivio `mods.zip` da [qui](https://1drv.ms/f/c/065897bd642782c8/EjrP1DBPqGpLsBY0MtgaA4QBK0Mirq6CyuJGV2kWlkpRyw?e=64qIxT)
+   ⚠️ Occorre un account Microsoft per scaricare i files!
 
 5. Estrai il contenuto dell’archivio `.zip` nella cartella:
 
@@ -73,7 +74,28 @@ Fabric è necessario per caricare le mod del server.
    .minecraft/resourcepacks
    ```
 
+3. Entra nel gioco, Options > Resource Packs > e poi abilita i Resource packs trascinandoli da sinistra verso destra
+
 ---
+
+### 5. (Opzionale) Installa gli shaders
+
+Gli shaders ti migliorano la grafica, se hai un hardware potente!
+
+1. Premi `Win + R`, digita:
+
+   ```
+   %appdata%
+   ```
+
+   e premi Invio.
+
+3. Vai nella cartella `.minecraft`
+
+4. Metti questo nella cartella shaderpacks (crea la cartella se non c'e') https://cdn.modrinth.com/data/R6NEzAwj/versions/1ng9gVp7/ComplementaryUnbound_r5.5.1.zip
+
+5. Metti questo nella cartella mods https://cdn.modrinth.com/data/YL57xq9U/versions/s5eFLITc/iris-1.7.6%2Bmc1.20.1.jar
+
 
 ## 🌐 Accedere al Server AriA
 
