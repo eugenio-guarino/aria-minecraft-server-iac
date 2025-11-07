@@ -1,28 +1,32 @@
 resource "google_compute_instance" "aria_server" {
-
   name         = var.instance_name
   machine_type = "n2-highmem-4"
-  tags         = ["minecraft-server"]
   zone         = var.zone
+  tags         = ["minecraft-server"]
 
   boot_disk {
     auto_delete = true
     initialize_params {
-      image = "debian-cloud/debian-12"
+      image = "debian-cloud/debian-13"
       size  = 10
+      type  = "pd-balanced"
     }
   }
 
+  attached_disk {
+    source      = "aria-minecraft-data"
+    device_name = "aria-minecraft-data"
+  }
 
   network_interface {
-    network = "default"
-
+    network    = "minecraft-aria-network"
+    subnetwork = "minecraft-aria-subnet-euw8"
     access_config {}
   }
 
   service_account {
     email  = var.service_account
-    scopes = ["storage-rw", "monitoring"]
+    scopes = ["cloud-platform"]
   }
 
   scheduling {
@@ -33,18 +37,12 @@ resource "google_compute_instance" "aria_server" {
   }
 
   metadata = {
-    # Enable compute os-login GCP role at instance level
-    enable-oslogin = "TRUE"
-    startup-script = file("./scripts/config.sh")
+    enable-oslogin  = "TRUE"
+    startup-script  = file("./scripts/config.sh")
     shutdown-script = file("./scripts/shutdown.sh")
   }
 
-  lifecycle {
-    ignore_changes = [attached_disk]
+  labels = {
+    app = "aria-minecraft-server"
   }
-}
-
-resource "google_compute_attached_disk" "aria-data-disk" {
-  disk     = "aria-minecraft-data"
-  instance = google_compute_instance.aria_server.id
 }

@@ -3,59 +3,73 @@ name: send ip address to players
 on:
   repository_dispatch:
     types: [send-ip-address]
-env:
-  tf_version: "1.4.0"
-  tf_working_dir: "./terraform"
-  TF_VAR_region: ${{ vars.REGION }}
-  TF_VAR_project_id: ${{ secrets.PROJECT_NAME }}
-  TF_VAR_zone: ${{ vars.ZONE }}
-  TF_VAR_instance_name: ${{ vars.INSTANCE_NAME }}
-  TF_VAR_service_account: ${{ secrets.GCP_SA_EMAIL}}
-  GCP_SA_KEY: ${{ secrets.GCP_SA_KEY}}
-  
+
+concurrency:
+  group: send-ip-address
+  cancel-in-progress: false
+
 jobs:
   terraform:
     name: "Terraform"
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-24.04
     steps:
       - name: checkout
-        uses: actions/checkout@master
-    
-
-      - name: set GCP project
-        run: gcloud config set project ${{ secrets.PROJECT_NAME }}
+        uses: actions/checkout@main
 
       - name: "Terraform Init"
         uses: ops18/terraform-github-actions@master
         with:
-          tf_actions_version: ${{ env.tf_version }}
+          tf_actions_version: "1.4.0"
           tf_actions_comment: "false"
-          tf_actions_working_dir: ${{ env.tf_working_dir }}
+          tf_actions_working_dir: "./terraform"
           tf_actions_subcommand: init
-          args: '-backend-config="bucket=${{ secrets.GCP_BUCKET }}" -backend-config="prefix=terraform-state"'
+          args: >
+            -backend-config="bucket=${{ secrets.GCP_BUCKET }}"
+            -backend-config="prefix=terraform-state"
+        env:
+          TF_VAR_region: ${{ vars.REGION }}
+          TF_VAR_project_id: ${{ secrets.PROJECT_NAME }}
+          TF_VAR_zone: ${{ vars.ZONE }}
+          TF_VAR_instance_name: ${{ vars.INSTANCE_NAME }}
+          TF_VAR_service_account: ${{ secrets.GCP_SA_EMAIL }}
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
 
-      - name: "Terraform Apply"
+      - name: "Terraform Apply (refresh only)"
         uses: ops18/terraform-github-actions@master
         with:
-          tf_actions_version: ${{ env.tf_version }}
+          tf_actions_version: "1.4.0"
           tf_actions_comment: "false"
-          tf_actions_working_dir: ${{ env.tf_working_dir }}
+          tf_actions_working_dir: "./terraform"
           tf_actions_subcommand: apply
-          args: '-refresh-only'
+          args: "-refresh-only"
+        env:
+          TF_VAR_region: ${{ vars.REGION }}
+          TF_VAR_project_id: ${{ secrets.PROJECT_NAME }}
+          TF_VAR_zone: ${{ vars.ZONE }}
+          TF_VAR_instance_name: ${{ vars.INSTANCE_NAME }}
+          TF_VAR_service_account: ${{ secrets.GCP_SA_EMAIL }}
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
 
       - name: "Terraform Output"
         id: terraform
         uses: ops18/terraform-github-actions@master
         with:
-          tf_actions_version: ${{ env.tf_version }}
+          tf_actions_version: "1.4.0"
           tf_actions_comment: "false"
-          tf_actions_working_dir: ${{ env.tf_working_dir }}
+          tf_actions_working_dir: "./terraform"
           tf_actions_subcommand: output
+        env:
+          TF_VAR_region: ${{ vars.REGION }}
+          TF_VAR_project_id: ${{ secrets.PROJECT_NAME }}
+          TF_VAR_zone: ${{ vars.ZONE }}
+          TF_VAR_instance_name: ${{ vars.INSTANCE_NAME }}
+          TF_VAR_service_account: ${{ secrets.GCP_SA_EMAIL }}
+          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
 
       - uses: actions-ecosystem/action-regex-match@v2
         id: regex-match
         with:
-          text: ${{steps.terraform.outputs.tf_actions_output}}
+          text: ${{ steps.terraform.outputs.tf_actions_output }}
           regex: '(?:[0-9]{1,3}\.){3}[0-9]{1,3}'
 
       - name: send telegram message
@@ -64,4 +78,4 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            ${{steps.regex-match.outputs.match}}
+            ${{ steps.regex-match.outputs.match }}
