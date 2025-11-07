@@ -10,7 +10,7 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Mount minecraft data disk
 mkdir -p /mnt/disks/aria-data-disk
-mount -o discard,defaults /dev/sdb /mnt/disks/aria-data-disk
+mount -o discard,defaults /dev/disk/by-id/google-aria-data-disk /mnt/disks/aria-data-disk
 
 # Create scripts for server
 mkdir -p /opt/scripts

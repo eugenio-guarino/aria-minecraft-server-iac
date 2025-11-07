@@ -15,6 +15,7 @@ resource "google_compute_instance" "aria_server" {
 
   attached_disk {
     source      = "aria-minecraft-server-data"
+    device_name = "aria-data-disk"
   }
 
   network_interface {
