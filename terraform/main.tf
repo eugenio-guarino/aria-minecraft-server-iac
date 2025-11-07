@@ -2,7 +2,7 @@ resource "google_compute_instance" "aria_server" {
   name         = var.instance_name
   machine_type = "n2-highmem-4"
   zone         = var.zone
-  tags         = ["minecraft-server"]
+  tags         = ["aria-minecraft-server"]
 
   boot_disk {
     auto_delete = true
