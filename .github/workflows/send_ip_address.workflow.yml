@@ -24,7 +24,7 @@ jobs:
       TF_VAR_project_id: reflected-gamma-341201
       TF_VAR_zone: ${{ vars.ZONE }}
       TF_VAR_instance_name: ${{ vars.INSTANCE_NAME }}
-      TF_VAR_service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+      TF_VAR_service_account: ${{ vars.GCP_VM_SERVICE_ACCOUNT }}
       TF_VAR_machine_type: ${{ vars.MACHINE_TYPE }}
       TF_VAR_boot_image: ${{ vars.BOOT_IMAGE }}
       TF_VAR_boot_disk_size_gb: ${{ vars.BOOT_DISK_SIZE_GB }}
