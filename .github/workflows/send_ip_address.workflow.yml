@@ -69,5 +69,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: |
-            🎮 Server IP: ${{ steps.terraform.outputs.instance_ip }}
+          message: ${{ steps.terraform.outputs.instance_ip }}
