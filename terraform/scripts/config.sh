@@ -57,23 +57,10 @@ docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
     --health-cmd="mc-health" --health-interval=10s --health-start-period=120s \
     itzg/minecraft-server:java17
 
-# Wait for container to be healthy (max 5 minutes)
-echo "Waiting for Minecraft server to be ready..."
-
-# Minimum wait time for initial container startup
+# Wait for Minecraft server to start
+echo "Waiting for Minecraft server to start..."
 sleep 45s
-
-TRIES=0
-MAX_TRIES=30
-while [ "$(docker inspect --format='{{.State.Health.Status}}' mc 2>/dev/null || echo 'starting')" != "healthy" ]; do
-  TRIES=$((TRIES + 1))
-  if [ $TRIES -ge $MAX_TRIES ]; then
-    echo "Warning: Container did not become healthy in time, continuing anyway..."
-    break
-  fi
-  sleep 10
-done
-echo "Minecraft server is ready!"
+echo "Minecraft server should be ready!"
 
 # Send the IP address to the Telegram group
 nohup bash /opt/scripts/send_ip_address.sh </dev/null &>/dev/null &
