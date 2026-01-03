@@ -54,7 +54,6 @@ docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
     -e AUTOSTOP_TIMEOUT_INIT=600 -e ONLINE_MODE=false \
     -e VERSION=1.20.1 \
     -p 25565:25565 -e EULA=TRUE --name mc \
-    --health-cmd="mc-health" --health-interval=10s --health-start-period=120s \
     itzg/minecraft-server:java17
 
 # Wait for Minecraft server to start
