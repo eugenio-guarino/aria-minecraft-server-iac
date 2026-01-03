@@ -59,6 +59,10 @@ docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
 
 # Wait for container to be healthy (max 5 minutes)
 echo "Waiting for Minecraft server to be ready..."
+
+# Minimum wait time for initial container startup
+sleep 45s
+
 TRIES=0
 MAX_TRIES=30
 while [ "$(docker inspect --format='{{.State.Health.Status}}' mc 2>/dev/null || echo 'starting')" != "healthy" ]; do
