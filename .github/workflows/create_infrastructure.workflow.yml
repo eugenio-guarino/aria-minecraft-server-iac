@@ -59,7 +59,7 @@ jobs:
       - name: Terraform Init
         working-directory: ./terraform
         run: |
-          terraform init \
+          terraform init -upgrade \
             -backend-config="bucket=${{ secrets.GCP_BUCKET }}" \
             -backend-config="prefix=terraform-state"
 
