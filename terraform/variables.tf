@@ -30,3 +30,43 @@ variable "service_account" {
     error_message = "Must be a valid GCP service account email address."
   }
 }
+
+variable "machine_type" {
+  description = "The machine type for the compute instance."
+  type        = string
+  default     = "n2-highmem-4"
+}
+
+variable "boot_image" {
+  description = "The boot disk image for the compute instance."
+  type        = string
+  default     = "debian-cloud/debian-13"
+}
+
+variable "boot_disk_size_gb" {
+  description = "The size of the boot disk in GB."
+  type        = number
+  default     = 10
+  validation {
+    condition     = var.boot_disk_size_gb >= 10
+    error_message = "Boot disk size must be at least 10 GB."
+  }
+}
+
+variable "data_disk_name" {
+  description = "The name of the persistent data disk to attach."
+  type        = string
+  default     = "aria-minecraft-server-data"
+}
+
+variable "network_name" {
+  description = "The name of the VPC network."
+  type        = string
+  default     = "minecraft-aria-network"
+}
+
+variable "subnet_name" {
+  description = "The name of the subnet."
+  type        = string
+  default     = "minecraft-aria-subnet-euw8"
+}

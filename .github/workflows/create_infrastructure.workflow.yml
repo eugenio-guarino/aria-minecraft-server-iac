@@ -8,51 +8,61 @@ concurrency:
   group: deploy-create-infr
   cancel-in-progress: false
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   terraform:
     name: "Terraform"
     runs-on: ubuntu-24.04
+    environment: aria-production
+    
+    env:
+      # Terraform variables (from environment)
+      TF_VAR_region: ${{ vars.REGION }}
+      TF_VAR_project_id: reflected-gamma-341201
+      TF_VAR_zone: ${{ vars.ZONE }}
+      TF_VAR_instance_name: ${{ vars.INSTANCE_NAME }}
+      TF_VAR_service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+      TF_VAR_machine_type: ${{ vars.MACHINE_TYPE }}
+      TF_VAR_boot_image: ${{ vars.BOOT_IMAGE }}
+      TF_VAR_boot_disk_size_gb: ${{ vars.BOOT_DISK_SIZE_GB }}
+      TF_VAR_data_disk_name: ${{ vars.DATA_DISK_NAME }}
+      TF_VAR_network_name: ${{ vars.NETWORK_NAME }}
+      TF_VAR_subnet_name: ${{ vars.SUBNET_NAME }}
+
     steps:
-      - name: send telegram message
-        uses: appleboy/telegram-action@master
+      - name: Send telegram message
+        uses: appleboy/telegram-action@v1.0.0
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             ${{ vars.CREATE_MESSAGE }}
 
-      - name: checkout
-        uses: actions/checkout@main
+      - name: Checkout
+        uses: actions/checkout@v4
 
-      - name: "Terraform Init"
-        uses: ops18/terraform-github-actions@master
+      - name: Authenticate to Google Cloud
+        id: auth
+        uses: google-github-actions/auth@v2
         with:
-          tf_actions_version: "1.4.0"
-          tf_actions_comment: "false"
-          tf_actions_working_dir: "./terraform"
-          tf_actions_subcommand: init
-          args: >
-            -backend-config="bucket=${{ secrets.GCP_BUCKET }}"
+          workload_identity_provider: ${{ vars.WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ vars.GCP_SERVICE_ACCOUNT }}
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+        with:
+          terraform_version: "1.10.0"
+
+      - name: Terraform Init
+        working-directory: ./terraform
+        run: |
+          terraform init \
+            -backend-config="bucket=${{ secrets.GCP_BUCKET }}" \
             -backend-config="prefix=terraform-state"
-        env:
-          TF_VAR_region: ${{ vars.REGION }}
-          TF_VAR_project_id: ${{ secrets.PROJECT_NAME }}
-          TF_VAR_zone: ${{ vars.ZONE }}
-          TF_VAR_instance_name: ${{ vars.INSTANCE_NAME }}
-          TF_VAR_service_account: ${{ secrets.GCP_SA_EMAIL }}
-          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
 
-      - name: "Terraform Apply"
-        uses: ops18/terraform-github-actions@master
-        with:
-          tf_actions_version: "1.4.0"
-          tf_actions_comment: "false"
-          tf_actions_working_dir: "./terraform"
-          tf_actions_subcommand: apply
-        env:
-          TF_VAR_region: ${{ vars.REGION }}
-          TF_VAR_project_id: ${{ secrets.PROJECT_NAME }}
-          TF_VAR_zone: ${{ vars.ZONE }}
-          TF_VAR_instance_name: ${{ vars.INSTANCE_NAME }}
-          TF_VAR_service_account: ${{ secrets.GCP_SA_EMAIL }}
-          GCP_SA_KEY: ${{ secrets.GCP_SA_KEY }}
+      - name: Terraform Apply
+        working-directory: ./terraform
+        run: terraform apply -auto-approve

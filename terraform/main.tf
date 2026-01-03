@@ -1,26 +1,26 @@
 resource "google_compute_instance" "aria_server" {
   name         = var.instance_name
-  machine_type = "n2-highmem-4"
+  machine_type = var.machine_type
   zone         = var.zone
   tags         = ["aria-minecraft-server"]
 
   boot_disk {
     auto_delete = true
     initialize_params {
-      image = "debian-cloud/debian-13"
-      size  = 10
+      image = var.boot_image
+      size  = var.boot_disk_size_gb
       type  = "pd-balanced"
     }
   }
 
   attached_disk {
-    source      = "aria-minecraft-server-data"
+    source      = var.data_disk_name
     device_name = "aria-data-disk"
   }
 
   network_interface {
-    network    = "minecraft-aria-network"
-    subnetwork = "minecraft-aria-subnet-euw8"
+    network    = var.network_name
+    subnetwork = var.subnet_name
     access_config {}
   }
 
@@ -46,3 +46,4 @@ resource "google_compute_instance" "aria_server" {
     app = "aria-minecraft-server"
   }
 }
+

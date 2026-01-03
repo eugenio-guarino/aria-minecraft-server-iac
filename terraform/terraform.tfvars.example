@@ -1,0 +1,14 @@
+# Required variables
+project_id      = "your-gcp-project-id"
+region          = "europe-west8"
+zone            = "europe-west8-a"
+instance_name   = "aria-minecraft-server"
+service_account = "your-service-account@your-project.iam.gserviceaccount.com"
+
+# Optional variables (defaults shown)
+# machine_type      = "n2-highmem-4"
+# boot_image        = "debian-cloud/debian-13"
+# boot_disk_size_gb = 10
+# data_disk_name    = "aria-minecraft-server-data"
+# network_name      = "minecraft-aria-network"
+# subnet_name       = "minecraft-aria-subnet-euw8"

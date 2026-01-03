@@ -1,11 +1,10 @@
 #!/bin/bash
+set -euo pipefail
 
 # Redirect both stdout and stderr to a file
-exec > output.txt 2>&1
+exec >output.txt 2>&1
 
-sudo su
-
-#no interactive input at all
+# No interactive input at all
 export DEBIAN_FRONTEND=noninteractive
 
 # Mount minecraft data disk
@@ -16,7 +15,7 @@ mount -o discard,defaults /dev/disk/by-id/google-aria-data-disk /mnt/disks/aria-
 mkdir -p /opt/scripts
 gsutil -m cp -r gs://aria-minecraft-server/scripts/* /opt/scripts/
 
-#syncronyze mods
+# Synchronize mods (uncomment if needed)
 # gsutil -m rsync -d gs://aria-minecraft-server/mods /mnt/disks/aria-data-disk/mods
 
 # Upgrade system packages
@@ -33,7 +32,7 @@ rm add-google-cloud-ops-agent-repo.sh
 
 # Add Docker's official GPG key
 apt-get update
-apt-get install ca-certificates curl
+apt-get install -y ca-certificates curl
 install -m 0755 -d /etc/apt/keyrings
 curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
 chmod a+r /etc/apt/keyrings/docker.asc
@@ -42,21 +41,35 @@ chmod a+r /etc/apt/keyrings/docker.asc
 echo \
   "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/debian \
   $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-  sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+  tee /etc/apt/sources.list.d/docker.list > /dev/null
 apt-get update
 
 # Install docker packages
 apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
 
-# Run Minecraft docker image
+# Run Minecraft docker image with health check
 docker run --privileged -d -v /mnt/disks/aria-data-disk/:/data \
     -e TYPE=FABRIC -e MEMORY=28G -e DEBUG=true -e PVP=false \
     -e ENABLE_AUTOSTOP=TRUE -e AUTOSTOP_TIMEOUT_EST=350 \
     -e AUTOSTOP_TIMEOUT_INIT=600 -e ONLINE_MODE=false \
     -e VERSION=1.20.1 \
-    -p 25565:25565 -e EULA=TRUE --name mc itzg/minecraft-server:java17
+    -p 25565:25565 -e EULA=TRUE --name mc \
+    --health-cmd="mc-health" --health-interval=10s --health-start-period=120s \
+    itzg/minecraft-server:java17
 
-sleep 45s
+# Wait for container to be healthy (max 5 minutes)
+echo "Waiting for Minecraft server to be ready..."
+TRIES=0
+MAX_TRIES=30
+while [ "$(docker inspect --format='{{.State.Health.Status}}' mc 2>/dev/null || echo 'starting')" != "healthy" ]; do
+  TRIES=$((TRIES + 1))
+  if [ $TRIES -ge $MAX_TRIES ]; then
+    echo "Warning: Container did not become healthy in time, continuing anyway..."
+    break
+  fi
+  sleep 10
+done
+echo "Minecraft server is ready!"
 
 # Send the IP address to the Telegram group
 nohup bash /opt/scripts/send_ip_address.sh </dev/null &>/dev/null &
